@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nomenclatura GLE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes scaleIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+      @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes dotPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+      .splash-container { position: fixed; inset: 0; background-color: white; z-index: 50; display: flex; align-items: center; justify-content: center; animation: fadeIn 1.2s ease-out; }
+      .splash-container.fade-out { animation: fadeOut 1.0s ease-out forwards; }
+      .splash-content { text-align: center; }
+      .logo-wrapper { margin-bottom: 1.5rem; animation: scaleIn 0.8s ease-out; }
+      .logo-pulse { animation: pulse 2s ease-in-out infinite; }
+      .logo-title { font-size: 4.5rem; font-weight: bold; color: #dc2626; letter-spacing: -0.025em; }
+      .logo-underline { height: 4px; width: 6rem; background-color: #dc2626; margin: 1rem auto 0; border-radius: 9999px; }
+      .splash-subtitle { color: #4b5563; font-size: 1.125rem; letter-spacing: 0.05em; animation: slideUp 0.6s ease-out 0.5s both; }
+      .loading-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem; animation: fadeIn 0.6s ease-out 1s both; }
+      .loading-dot { width: 0.5rem; height: 0.5rem; background-color: #dc2626; border-radius: 9999px; }
+      .loading-dot:nth-child(1) { animation: dotPulse 1s ease-in-out infinite; }
+      .loading-dot:nth-child(2) { animation: dotPulse 1s ease-in-out infinite 0.2s; }
+      .loading-dot:nth-child(3) { animation: dotPulse 1s ease-in-out infinite 0.4s; }
+      .splash-hero { width: min(600px, 92vw); height: auto; animation: scaleIn 0.8s ease-out; }
+      @media (max-width: 640px) { .logo-title { font-size: 3rem; } .logo-underline { width: 4rem; } .splash-subtitle { font-size: 1rem; padding: 0 1rem; } }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "xlsx-js-style": "https://esm.sh/xlsx-js-style@1.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <script>
+      window.__SUPABASE_URL__ = 'https://ijtwktuxadmukkalmvym.supabase.co';
+      // Define window.__SUPABASE_ANON_KEY__ en runtime si no se usa VITE_SUPABASE_ANON_KEY
+    </script>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
